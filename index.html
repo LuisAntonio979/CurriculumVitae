@@ -70,22 +70,9 @@
         .certs-list h4 { color: var(--secondary-color); margin-top: 15px; margin-bottom: 5px; }
         .certs-list ul { list-style-position: inside; padding-left: 5px; }
         
-        /* ESTILOS PARA LA NUEVA SECCIÓN QR */
-        .qr-code-container {
-            text-align: center;
-        }
-        .qr-code-container img {
-            max-width: 150px;
-            border: 5px solid white;
-            border-radius: 8px;
-            background: white;
-        }
-        .qr-code-container p {
-            font-size: 0.8rem;
-            margin-top: 10px;
-            opacity: 0.8;
-            font-style: italic;
-        }
+        .qr-code-container { text-align: center; }
+        .qr-code-container img { max-width: 150px; border: 5px solid white; border-radius: 8px; background: white; }
+        .qr-code-container p { font-size: 0.8rem; margin-top: 10px; opacity: 0.8; font-style: italic; }
 
         .main-content { padding: 50px; width: 70%; }
         .main-header { text-align: left; margin-bottom: 40px; }
@@ -154,12 +141,25 @@
                     </li>
                 </ul>
             </section>
-
-            <!-- NUEVA SECCIÓN PARA EL CÓDIGO QR -->
+            
+            <!-- SECCIÓN REINSERTADA -->
+            <section class="sidebar-section">
+                <h2 class="sidebar-title"><i class="fas fa-cogs"></i>Habilidades Técnicas</h2>
+                <ul class="skills-list">
+                    <li>Análisis de Datos y BI</li>
+                    <li>Power BI, DAX, Power Query</li>
+                    <li>Python (Pandas, NumPy)</li>
+                    <li>SQL</li>
+                    <li>Salesforce (Admin, Flow)</li>
+                    <li>Gestión de Proyectos</li>
+                    <li>Metodologías Ágiles & Jira</li>
+                    <li>MS Azure (Conceptos)</li>
+                </ul>
+            </section>
+            
             <section class="sidebar-section qr-code-container">
                 <h2 class="sidebar-title" style="justify-content: center;"><i class="fas fa-link"></i>Perfil Interactivo</h2>
-                <!-- Aquí irá el enlace a tu imagen de QR -->
-                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://linkedin.com/in/luisantoniojimenezpernia" alt="Código QR al Perfil Profesional">
+                <img src="https://i.imgur.com/VoIUG79.png" alt="Código QR al Perfil Profesional">
                 <p>Escanea para ver mi perfil actualizado</p>
             </section>
             
