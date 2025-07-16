@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luis Antonio Jiménez Pernía | Perfil Profesional</title>
+    <!-- Iconos de Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Fuentes de Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- ESTILOS CSS BASE --- */
+
+        :root {
+            --primary-color: #0077B6;
+            --secondary-color: #00B4D8;
+            --dark-bg: #222831;
+            --light-bg: #FFFFFF;
+            --text-color-dark: #393E46;
+            --text-color-light: #EEEEEE;
+            --timeline-color: #CAF0F8;
+            --whatsapp-color: #25D366;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Lato', sans-serif; background-color: #F8F9FA; color: var(--text-color-dark); }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Montserrat', sans-serif; font-weight: 700; }
+        a { text-decoration: none; color: var(--secondary-color); transition: color 0.3s ease; }
+        a:hover { color: var(--primary-color); }
+
+        .resume-container {
+            display: flex;
+            width: 100%;
+            max-width: 1300px;
+            margin: 40px auto;
+            background: var(--light-bg);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .sidebar {
+            background-color: var(--dark-bg);
+            color: var(--text-color-light);
+            padding: 40px;
+            width: 30%;
+            min-width: 300px;
+        }
+
+        .sidebar-section { margin-bottom: 30px; }
+        .sidebar-title { color: var(--text-color-light); font-size: 1.4rem; padding-bottom: 10px; border-bottom: 2px solid var(--secondary-color); margin-bottom: 20px; display: flex; align-items: center; }
+        .sidebar-title i { margin-right: 10px; width: 25px; text-align: center; }
+        
+        .contact-list, .skills-list, .certs-list, .strengths-list, .education-list, .languages-list { list-style: none; }
+        .contact-list li, .education-list li, .languages-list li { margin-bottom: 15px; display: flex; align-items: flex-start; }
+        .contact-list i, .education-list i, .languages-list i { margin-right: 15px; width: 20px; color: var(--secondary-color); margin-top: 4px; }
+        .contact-list a { color: var(--text-color-light); word-break: break-all; }
+        .whatsapp-link { margin-left: auto; font-size: 1.4rem; color: var(--whatsapp-color); transition: transform 0.2s ease; }
+        .whatsapp-link:hover { transform: scale(1.2); color: #ffffff; }
+        
+        .education-list h4, .languages-list h4 { margin: 0; font-size: 1rem; color: var(--text-color-light); }
+        .education-list p, .languages-list p { font-size: 0.9rem; opacity: 0.8; }
+
+        .skills-list li { background-color: rgba(255, 255, 255, 0.1); padding: 8px 15px; border-radius: 20px; margin-bottom: 10px; font-size: 0.9rem; font-weight: 600; }
+        
+        .certs-list h4 { color: var(--secondary-color); margin-top: 15px; margin-bottom: 5px; }
+        .certs-list ul { list-style-position: inside; padding-left: 5px; }
+        
+        /* ESTILOS PARA LA NUEVA SECCIÓN QR */
+        .qr-code-container {
+            text-align: center;
+        }
+        .qr-code-container img {
+            max-width: 150px;
+            border: 5px solid white;
+            border-radius: 8px;
+            background: white;
+        }
+        .qr-code-container p {
+            font-size: 0.8rem;
+            margin-top: 10px;
+            opacity: 0.8;
+            font-style: italic;
+        }
+
+        .main-content { padding: 50px; width: 70%; }
+        .main-header { text-align: left; margin-bottom: 40px; }
+        .main-header h1 { font-size: 3rem; color: var(--primary-color); line-height: 1.2; }
+        .main-header .tagline { font-size: 1.5rem; font-weight: 300; color: var(--text-color-dark); }
+        
+        .section-title { font-size: 2rem; color: var(--primary-color); margin-top: 50px; margin-bottom: 30px; position: relative; padding-bottom: 10px; }
+        .main-content > section:first-of-type .section-title { margin-top: 0; }
+        .section-title::after { content: ''; position: absolute; bottom: 0; left: 0; width: 60px; height: 4px; background-color: var(--secondary-color); border-radius: 2px; }
+
+        .experience-section { position: relative; }
+        .job { margin-bottom: 30px; padding-left: 30px; position: relative; }
+        .job::before { content: ''; position: absolute; left: 5px; top: 5px; width: 2px; height: 100%; background-color: var(--timeline-color); }
+        .job::after { content: ''; position: absolute; left: 0px; top: 5px; width: 12px; height: 12px; border-radius: 50%; background-color: var(--secondary-color); border: 2px solid var(--light-bg); z-index: 1; }
+        .job-title { font-size: 1.3rem; margin-bottom: 5px; }
+        .job-meta { font-style: italic; color: #6c757d; margin-bottom: 15px; font-size: 0.9rem; }
+        .job-achievements { padding-left: 20px; }
+        .job-achievements li { margin-bottom: 10px; }
+        .experience-summary p { font-style: italic; }
+
+        @media (max-width: 992px) {
+            .resume-container { flex-direction: column; margin: 0; border-radius: 0; }
+            .sidebar, .main-content { width: 100%; }
+        }
+        @media (max-width: 480px) {
+            .main-header h1 { font-size: 2.5rem; }
+            .main-header .tagline { font-size: 1.2rem; }
+            .sidebar, .main-content { padding: 30px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="resume-container">
+        <!-- ======================= -->
+        <!--  SIDEBAR (IZQUIERDA)    -->
+        <!-- ======================= -->
+        <aside class="sidebar">
+
+            <section class="sidebar-section">
+                <h2 class="sidebar-title"><i class="fas fa-address-book"></i>Contacto</h2>
+                <ul class="contact-list">
+                    <li>
+                        <i class="fas fa-phone"></i>
+                        <span>+584127005201</span>
+                        <a href="https://wa.me/584127005201" target="_blank" class="whatsapp-link" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </li>
+                    <li><i class="fas fa-envelope"></i><a href="mailto:LuisAntonioJimenez@gmail.com">LuisAntonioJimenez@gmail.com</a></li>
+                    <li><i class="fab fa-linkedin"></i><a href="https://linkedin.com/in/luisantoniojimenezpernia" target="_blank">LinkedIn Profile</a></li>
+                    <li><i class="fab fa-salesforce"></i><a href="https://www.salesforce.com/trailblazer/luisantonio" target="_blank">Trailblazer Profile</a></li>
+                    <li><i class="fas fa-map-marker-alt"></i>Caracas, Venezuela</li>
+                </ul>
+            </section>
+            
+            <section class="sidebar-section">
+                <h2 class="sidebar-title"><i class="fas fa-graduation-cap"></i>Educación</h2>
+                <ul class="education-list">
+                    <li>
+                        <i class="fas fa-university"></i>
+                        <div>
+                            <h4>Ingeniería de Sistemas</h4>
+                            <p>Universidad Nacional Experimental Politécnica de la Fuerza Armada Nacional (UNEFA)</p>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- NUEVA SECCIÓN PARA EL CÓDIGO QR -->
+            <section class="sidebar-section qr-code-container">
+                <h2 class="sidebar-title" style="justify-content: center;"><i class="fas fa-link"></i>Perfil Interactivo</h2>
+                <!-- Aquí irá el enlace a tu imagen de QR -->
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://linkedin.com/in/luisantoniojimenezpernia" alt="Código QR al Perfil Profesional">
+                <p>Escanea para ver mi perfil actualizado</p>
+            </section>
+            
+            <section class="sidebar-section">
+                <h2 class="sidebar-title"><i class="fas fa-globe"></i>Idiomas</h2>
+                <ul class="languages-list">
+                    <li>
+                        <i class="fas fa-language"></i>
+                        <div>
+                            <h4>Español</h4>
+                            <p>Nativo</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-language"></i>
+                        <div>
+                            <h4>Inglés</h4>
+                            <p>Nivel Profesional / Intermedio-Avanzado</p>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+            
+            <section class="sidebar-section">
+                <h2 class="sidebar-title"><i class="fas fa-star"></i>Fortalezas</h2>
+                 <ul class="strengths-list" style="list-style: none; padding-left: 0;">
+                    <li>Liderazgo y Coordinación</li>
+                    <li>Resolución de Problemas Complejos</li>
+                    <li>Pensamiento Estratégico</li>
+                    <li>Capacidad de Análisis</li>
+                    <li>Gestión de Stakeholders</li>
+                    <li>Adaptabilidad y Flexibilidad</li>
+                    <li>Proactividad y Aprendizaje Continuo</li>
+                    <li>Orientación a Resultados</li>
+                </ul>
+            </section>
+
+        </aside>
+
+        <!-- ======================= -->
+        <!--  MAIN CONTENT (DERECHA) -->
+        <!-- ======================= -->
+        <main class="main-content">
+
+            <header class="main-header">
+                <h1>Luis Antonio Jiménez Pernía</h1>
+                <p class="tagline">Análisis de Datos | Gestión de Proyectos | Salesforce</p>
+            </header>
+
+            <section>
+                <h2 class="section-title">Perfil Profesional</h2>
+                <p>Ingeniero de Sistemas con más de 10 años de experiencia en consultoría TI y gestión de servicios, especializado en la optimización de procesos y la transformación de datos en insights accionables. Demostrada capacidad para analizar requerimientos de negocio, liderar proyectos tecnológicos y coordinar equipos. Certificado como <strong>Salesforce Ranger</strong>, poseo un profundo conocimiento de la plataforma y un compromiso con el aprendizaje continuo en áreas como Data Analytics (Python, Power BI) y Gestión de Proyectos. Busco activamente una oportunidad para aplicar mis habilidades técnicas y de liderazgo en la consecución de objetivos estratégicos.</p>
+            </section>
+
+            <section>
+                <h2 class="section-title">Experiencia Profesional</h2>
+                <div class="experience-section">
+                    
+                    <article class="job">
+                        <h3 class="job-title">Consultor de Servicios de TI (Independiente/Freelance)</h3>
+                        <p class="job-meta">Autónomo | 2018 - Presente</p>
+                        <ul class="job-achievements">
+                            <li>Analizo flujos de trabajo operativos de diversas PYMES para identificar cuellos de botella y proponer soluciones tecnológicas que optimicen sus procesos.</li>
+                            <li>Implemento herramientas tecnológicas para sustituir tareas manuales en áreas clave, logrando una reducción significativa en los tiempos de respuesta y mejorando la eficiencia general.</li>
+                            <li>Actúo como punto de enlace clave entre los requerimientos de negocio del cliente y las soluciones técnicas.</li>
+                        </ul>
+                    </article>
+
+                    <article class="job">
+                        <h3 class="job-title">Gerente de Tecnología y Sistemas</h3>
+                        <p class="job-meta">Sincronatech 1810, C.A. | Ene 2020 - Dic 2020</p>
+                         <ul class="job-achievements">
+                            <li>Lideré la estrategia y operación de toda la infraestructura TI, garantizando la continuidad operativa y el soporte a las unidades de negocio.</li>
+                            <li>Gestioné proyectos de actualización de infraestructura y servicios, desde la planificación hasta la ejecución final.</li>
+                            <li>Optimicé los procesos de adquisición y el uso de recursos, resultando en una reducción de costos y una mejora considerable en la calidad y el rendimiento del equipamiento.</li>
+                        </ul>
+                    </article>
+                    
+                    <article class="job">
+                        <h3 class="job-title">Especialista de Filiales</h3>
+                        <p class="job-meta">CANTV | Ene 2018 - Ene 2019</p>
+                         <ul class="job-achievements">
+                            <li>Gestioné el complejo proceso de interconexión entre operadores, garantizando el cumplimiento estricto de normativas y acuerdos contractuales.</li>
+                            <li>Supervisé la calidad del servicio de interconexión, analizando métricas para asegurar el cumplimiento de los SLAs (Acuerdos de Nivel de Servicio).</li>
+                            <li>Actué como punto de enlace principal entre operadores, coordinando la comunicación y liderando la resolución de incidencias técnicas y contractuales de manera eficiente.</li>
+                        </ul>
+                    </article>
+
+                    <article class="job">
+                        <h3 class="job-title">Especialista Integral de Tecnología</h3>
+                        <p class="job-meta">Seguros Universitas C.A. | Mar 2017 - Ene 2018</p>
+                        <ul class="job-achievements">
+                            <li>Aseguré la continuidad operativa y el alto rendimiento de la infraestructura TI mediante la supervisión y gestión proactiva de todos los servicios.</li>
+                            <li>Lideré procesos de adquisición de tecnología, optimizando la relación costo-beneficio y mejorando la calidad del inventario tecnológico.</li>
+                            <li>Gestioné proyectos de mejora de infraestructura desde la planificación hasta la ejecución, supervisando al personal técnico para garantizar el éxito de las implementaciones.</li>
+                        </ul>
+                    </article>
+                    
+                    <article class="job">
+                        <h3 class="job-title">Coordinador de Soporte Técnico</h3>
+                        <p class="job-meta">Seguros Universitas C.A. | Mar 2014 - Feb 2017</p>
+                        <ul class="job-achievements">
+                            <li>Lideré un equipo de 12 especialistas, implementando procesos que mejoraron significativamente los tiempos de respuesta y resolución de incidencias.</li>
+                            <li>Impulsé un cambio de un modelo de soporte reactivo a uno proactivo mediante el análisis de datos de incidencias para aplicar soluciones preventivas.</li>
+                            <li>Esta estrategia resultó en una reducción sustancial en el número total de incidencias recurrentes.</li>
+                        </ul>
+                    </article>
+                    
+                    <article class="job experience-summary">
+                        <h3 class="job-title">Experiencia Fundacional</h3>
+                        <p class="job-meta">2008 - 2014</p>
+                        <p>Experiencia progresiva en roles de soporte técnico y administración de sistemas, donde desarrollé una sólida base en resolución de problemas complejos, atención al cliente y gestión de infraestructuras de redes y telecomunicaciones.</p>
+                    </article>
+
+                </div>
+            </section>
+            
+        </main>
+    </div>
+
+</body>
+</html>
